@@ -1,4 +1,3 @@
-// Enums
 export enum DEAStatus {
     POSITIVE = 'Positive',
     NEGATIVE = 'Negative',
@@ -23,7 +22,6 @@ export enum ConsentStatus {
     WITHDRAWN = 'withdrawn'
 }
 
-// Interfaces
 export interface Clinic {
     id: string;
     name: string;
@@ -44,17 +42,17 @@ export interface Clinic {
 }
 
 export interface WelfareConstraints {
-    screening: boolean; // true = current, false = expired
-    behavioral: boolean; // true = suitable, false = unsuitable
-    veterinary: boolean; // true = cleared, false = needs review
+    screening: boolean;
+    behavioral: boolean;
+    veterinary: boolean;
 }
 
 export interface Donor {
     id: string;
     signalment: {
         breed: string;
-        weight: number; // in kg
-        age: number; // in years
+        weight: number;
+        age: number;
     };
     deaStatus: DEAStatus;
     donationHistory: {
@@ -78,7 +76,7 @@ export interface TransfusionRequest {
 export interface BloodUnit {
     id: string;
     sourceClinic: string;
-    transportTime: number; // in minutes
+    transportTime: number;
     collectionDate: string;
     storageLocation: string;
     deaStatus: DEAStatus;
