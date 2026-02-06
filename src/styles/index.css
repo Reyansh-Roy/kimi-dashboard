@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Typography System */
+:root {
+  --font-data: 10pt;
+  --font-header: 12pt;
+  --font-annotation: 8pt;
+  --line-height: 1.5;
+}
+
+/* Custom Pattern Fills */
+.pattern-horizontal-lines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    #2E5AAC,
+    #2E5AAC 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+.pattern-diagonal-crosshatch {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      #2E5AAC,
+      #2E5AAC 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      #2E5AAC,
+      #2E5AAC 1px,
+      transparent 1px,
+      transparent 4px
+    );
+}
+
+.pattern-diagonal-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #FEF3C7,
+    #FEF3C7 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+.pattern-overfill-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #F59E0B,
+    #F59E0B 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+/* SVG Pattern Definitions */
+svg.patterns {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* Stock Level Indicators */
+.stock-bar {
+  height: 8px;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.stock-bar-depleted {
+  width: 20%;
+  background-color: #E5E7EB;
+}
+
+.stock-bar-adequate {
+  width: 50%;
+  background-color: #93C5FD;
+}
+
+.stock-bar-surplus {
+  width: 100%;
+  background-color: #2E5AAC;
+}
+
+/* Age Distribution Blocks */
+.age-block {
+  width: 40px;
+  height: 20px;
+  border: 1px solid #E5E7EB;
+}
+
+.age-block-0-7 {
+  background-color: #2E5AAC;
+}
+
+.age-block-8-14 {
+  background-image: repeating-linear-gradient(
+    0deg,
+    #2E5AAC,
+    #2E5AAC 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+.age-block-15-21 {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      #2E5AAC,
+      #2E5AAC 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      #2E5AAC,
+      #2E5AAC 1px,
+      transparent 1px,
+      transparent 4px
+    );
+}
+
+/* Donation History Gauge */
+.donation-gauge {
+  width: 100px;
+  height: 8px;
+  background-color: #E5E7EB;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.donation-gauge-fill {
+  height: 100%;
+  background-color: #10B981;
+  transition: width 0.3s ease;
+}
+
+.donation-gauge-overfill {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #F59E0B,
+    #F59E0B 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+/* Welfare Indicators */
+.welfare-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid #6B7280;
+}
+
+.welfare-indicator-filled {
+  background-color: #2E5AAC;
+}
+
+.welfare-indicator-empty {
+  background-color: transparent;
+}
+
+/* Compatibility Cards */
+.compatibility-compatible {
+  background-color: #DBEAFE;
+}
+
+.compatibility-caution {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #FEF3C7,
+    #FEF3C7 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+/* Ineligible Row Overlay */
+.row-ineligible {
+  position: relative;
+}
+
+.row-ineligible::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(107, 114, 128, 0.3);
+  pointer-events: none;
+}
+
+/* Typography Classes */
+.text-data {
+  font-size: 10pt;
+  line-height: 1.5;
+}
+
+.text-header {
+  font-size: 12pt;
+  font-weight: 500;
+}
+
+.text-annotation {
+  font-size: 8pt;
+  line-height: 1.8;
+}
+
+/* Urgency Levels */
+.urgency-routine {
+  font-weight: 400;
+}
+
+.urgency-urgent {
+  font-weight: 600;
+}
+
+.urgency-emergency {
+  font-weight: 700;
+  font-size: 11pt;
+}
+
+/* Panel Styling */
+.panel {
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+/* Scrollable Container */
+.scrollable-table {
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
+}
+
+/* Monospace for IDs */
+.font-mono-id {
+  font-family: 'Courier New', monospace;
+  font-size: 10pt;
+}
+
+/* Button Styles */
+.btn-outlined {
+  border: 1px solid #2E5AAC;
+  padding: 6px 12px;
+  background-color: transparent;
+  color: #2E5AAC;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 10pt;
+  transition: background-color 0.2s ease;
+}
+
+.btn-outlined:hover {
+  background-color: rgba(46, 90, 172, 0.05);
+}
+
+.btn-outlined-secondary {
+  border: 1px solid #6B7280;
+  color: #6B7280;
+}
+
+.btn-outlined-secondary:hover {
+  background-color: rgba(107, 114, 128, 0.05);
+}
+
+/* Ensure high contrast for accessibility */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F5F5F5;
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  background-color: #1F2937;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 8pt;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
