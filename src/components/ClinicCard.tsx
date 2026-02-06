@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clinic } from '../types/types';
+import { Clinic } from '@types/types';
 import { ClockIcon } from './Icons';
 
 interface ClinicCardProps {
